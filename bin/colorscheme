@@ -3,9 +3,23 @@
 DOTDIR="$(realpath $(dirname `realpath $0`)/..)"
 
 if [[ "$1" == '--list' ]]; then
-  find "$DOTDIR/lib/colorschemes" -name '*.zsh' -print 
+  cd "$DOTDIR/lib/colorschemes"
+  ls
   exit 0;
 fi
 
+
+function __color {
+  local id=$1
+  local color=$2
+  echo -ne '\eP\e]'$id';#'$color'\a'
+}
+
+function __colorscheme {
+  local id=$1
+  local color=$2
+  echo -ne '\eP\e]4;'$id';#'$color'\a'
+}
+
 name=$1
-"$DOTDIR/lib/colorschemes/${name}.zsh"
+source "$DOTDIR/lib/colorschemes/${name}"

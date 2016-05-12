@@ -1,7 +1,3 @@
-#!/usr/bin/zsh
-
-source $(dirname $0)/../mintty.zsh
-
 __color 10 'F8F8F2'
 __color 11 '272822'
 __color 12 'FD9D4F'
