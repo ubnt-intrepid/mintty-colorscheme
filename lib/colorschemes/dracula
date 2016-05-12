@@ -1,0 +1,23 @@
+# based on https://github.com/zenorocha/dracula-theme/blob/master/iterm/Dracula.itermcolors
+
+__color 10 'E5E5E5'
+__color 11 '1E1F28'
+__color 12 'BBBBBB'
+
+__colorscheme  0 '000000'
+__colorscheme  1 'FF5555'
+__colorscheme 10 '4FFA7B'
+__colorscheme 11 'F1FA8C'
+
+__colorscheme 12 'F993BD'
+__colorscheme 13 'FF79C6'
+__colorscheme 14 '8BE9FD'
+__colorscheme 15 'FFFFFF'
+__colorscheme  2 '4FFA7B'
+__colorscheme  3 'F1FA8C'
+__colorscheme  4 'BD93F9'
+__colorscheme  5 'FF79C6'
+__colorscheme  6 '8BE9FD'
+__colorscheme  7 'BBBBBB'
+__colorscheme  8 '545454'
+__colorscheme  9 'FF5454'
