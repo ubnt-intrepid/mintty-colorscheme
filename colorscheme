@@ -1,13 +1,17 @@
 #!/usr/bin/zsh
 
-DOTDIR="$(realpath $(dirname `realpath $0`)/..)"
+script_root="$(realpath $(dirname `realpath $0`)/..)"
 
-if [[ "$1" == '--list' ]]; then
-  cd "$DOTDIR/lib/colorschemes"
-  ls
-  exit 0;
+if [[ "$#" -ne 1 ]]; then
+  echo "Usage: $(basename $0) [--list] name"
+  exit 1
 fi
 
+if [[ "$1" == '--list' ]]; then
+  cd "$script_root}"/lib/colorschemes
+  ls
+  exit 0
+fi
 
 function __color {
   local id=$1
@@ -21,5 +25,4 @@ function __colorscheme {
   echo -ne '\eP\e]4;'$id';#'$color'\a'
 }
 
-name=$1
-source "$DOTDIR/lib/colorschemes/${name}"
+source "$script_root"/lib/colorschemes/"$1"
