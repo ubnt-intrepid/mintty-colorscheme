@@ -1,0 +1,11 @@
+#!/usr/bin/zsh
+
+DOTDIR="$(realpath $(dirname `realpath $0`)/..)"
+
+if [[ "$1" == '--list' ]]; then
+  find "$DOTDIR/lib/colorschemes" -name '*.zsh' -print 
+  exit 0;
+fi
+
+name=$1
+"$DOTDIR/lib/colorschemes/${name}.zsh"
