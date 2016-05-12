@@ -1,17 +1,17 @@
 #!/usr/bin/zsh
 
-function __colorscheme {
-  local script_root="$(realpath $(dirname `realpath $0`))"
+script_root="$(realpath $(dirname `realpath $0`))"
+
+colorscheme_main() {
 
   if [[ "$#" -ne 1 ]]; then
     echo "Usage: colorscheme [--list] name"
-    exit 1
+    return 1
   fi
 
   if [[ "$1" == '--list' ]]; then
-    cd "${script_root}"/lib/colorschemes
-    ls
-    exit 0
+    ls "${script_root}"/lib/colorschemes
+    return 0
   fi
 
   function __color {
@@ -29,4 +29,4 @@ function __colorscheme {
   source "$script_root"/lib/colorschemes/"$1"
 }
 
-alias colorscheme=__colorscheme
+alias colorscheme="colorscheme_main"

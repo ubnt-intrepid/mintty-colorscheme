@@ -1,0 +1,6 @@
+#compdef colorscheme_main
+
+_colorscheme() {
+  _values "List of colors" \
+    $(colorscheme_main --list)
+}
