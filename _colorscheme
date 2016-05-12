@@ -1,7 +1,0 @@
-#compdef colorscheme
-
-_colorscheme() {
-  _values 'colors' $(colorscheme --list)
-}
-
-# vim: set ft=zsh ts=2 sw=2 et :
