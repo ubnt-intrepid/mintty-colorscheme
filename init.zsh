@@ -10,7 +10,7 @@ colorscheme_main() {
   fi
 
   if [[ "$1" == '--list' ]]; then
-    ls "${script_root}"/lib/colorschemes
+    ls "${script_root}"/schemes
     return 0
   fi
 
@@ -26,7 +26,7 @@ colorscheme_main() {
     echo -ne '\eP\e]4;'$id';#'$color'\a'
   }
 
-  source "$script_root"/lib/colorschemes/"$1"
+  source "$script_root"/schemes/"$1"
 }
 
 alias colorscheme="colorscheme_main"
