@@ -15,18 +15,28 @@ colorscheme_main() {
   fi
 
   function __color {
-    local id=$1
-    local color=$2
-    echo -ne '\eP\e]'$id';#'$color'\a'
+    echo -ne '\eP\e]'$1';#'$2'\a'
   }
 
   function __colorscheme {
-    local id=$1
-    local color=$2
-    echo -ne '\eP\e]4;'$id';#'$color'\a'
+    echo -ne '\eP\e]4;'$1';#'$2'\a'
   }
 
-  source "$script_root"/schemes/"$1"
+  function __eval_line {
+    local name=$1
+
+    # read schemes
+    local lines=( ${(@f)"$(< $script_root/schemes/$name)"} )
+    lines=( ${lines:#\#*} )
+
+    # eval lines
+    local line
+    for line in $lines; do
+      eval "$line"
+    done 
+  }
+
+  __eval_line $1
 }
 
 alias colorscheme="colorscheme_main"
