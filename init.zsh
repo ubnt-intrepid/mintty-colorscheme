@@ -40,9 +40,11 @@ colorscheme_main() {
   fi
 
   if [[ "$1" == '--list' ]]; then
+    local name
     for name in "${script_root}"/schemes/*(.); do
-      basename $name
+      echo -n "$(basename $name) "
     done
+    echo
     return 0
   fi
 
