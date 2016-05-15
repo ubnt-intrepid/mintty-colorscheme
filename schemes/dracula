@@ -1,22 +1,22 @@
 # based on https://github.com/zenorocha/dracula-theme/blob/master/iterm/Dracula.itermcolors
 
-__color 10 'E5E5E5'
-__color 11 '1E1F28'
-__color 12 'BBBBBB'
+ForegroundColour = 229,229,229
+BackgroundColour = 30,31,40
+CursorColour     = 187,187,187
 
-__colorscheme  0 '000000'
-__colorscheme  1 'FF5555'
-__colorscheme 10 '4FFA7B'
-__colorscheme 11 'F1FA8C'
-__colorscheme 12 'BD93F9'
-__colorscheme 13 'FF79C6'
-__colorscheme 14 '8BE9FD'
-__colorscheme 15 'FFFFFF'
-__colorscheme  2 '4FFA7B'
-__colorscheme  3 'F1FA8C'
-__colorscheme  4 'BD93F9'
-__colorscheme  5 'FF79C6'
-__colorscheme  6 '8BE9FD'
-__colorscheme  7 'BBBBBB'
-__colorscheme  8 '545454'
-__colorscheme  9 'FF5454'
+Black       = 0,0,0
+Red         = 255,85,85
+Green       = 79,250,123
+Yellow      = 241,250,140
+Blue        = 189,147,249
+Magenta     = 255,121,198
+Cyan        = 139,233,253
+White       = 187,187,187
+BoldBlack   = 84,84,84
+BoldRed     = 255,84,84
+BoldGreen   = 79,250,123
+BoldYellow  = 241,250,140
+BoldBlue    = 189,147,249
+BoldMagenta = 255,121,198
+BoldCyan    = 139,233,253
+BoldWhite   = 255,255,255

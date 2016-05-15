@@ -4,11 +4,8 @@ A simple colorscheme management tools for Cygwin/MSYS2 terminal emulator (Mintty
 ## Installation
 
 ```zsh
+git clone https://github.com/ys-nuem/mintty-colorscheme.git /path/to/mintty-colorscheme
 source /path/to/mintty-colorscheme/init.zsh
-fpath=(
-  /path/to/mintty-colorscheme
-  $fpath
-)
 ```
 
 or
@@ -25,3 +22,5 @@ $ colorscheme base16-monokai
 
 ## License
 MIT License (See [LICENSE](LICENSE)).
+
+base16 colorschemes is imported from https://github.com/ticky/base16-mintty
