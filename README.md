@@ -23,4 +23,4 @@ $ colorscheme base16-monokai
 ## License
 MIT License (See [LICENSE](LICENSE)).
 
-base16 colorschemes is imported from https://github.com/ticky/base16-mintty
+base16 colorschemes is imported from [base16-generator](https://github.com/chriskempson/base16-builder). 

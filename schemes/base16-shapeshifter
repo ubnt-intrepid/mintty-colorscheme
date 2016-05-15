@@ -1,3 +1,6 @@
+ForegroundColour = 171,171,171
+BackgroundColour = 0,0,0
+CursorColour = 171,171,171
 Black = 0,0,0
 BoldBlack = 52,52,52
 Red = 233,47,47
