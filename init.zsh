@@ -10,33 +10,26 @@ colorscheme_main() {
   fi
 
   if [[ "$1" == '--list' ]]; then
-    ls "${script_root}"/schemes
+    for name in "${script_root}"/schemes/*(.); do
+      basename $name
+    done
     return 0
   fi
 
-  function __color {
-    echo -ne '\eP\e]'$1';#'$2'\a'
+  function __eval {
+    __color()       { echo -ne '\eP\e]'$1';#'$2'\a' }
+    __colorscheme() { echo -ne '\eP\e]4;'$1';#'$2'\a' }
+    eval "$@"
   }
 
-  function __colorscheme {
-    echo -ne '\eP\e]4;'$1';#'$2'\a'
-  }
+  # read schemes
+  lines=( ${(@f)"$(< $script_root/schemes/$1)"} )
+  lines=( ${lines:#\#*} )
 
-  function __eval_line {
-    local name=$1
-
-    # read schemes
-    local lines=( ${(@f)"$(< $script_root/schemes/$name)"} )
-    lines=( ${lines:#\#*} )
-
-    # eval lines
-    local line
-    for line in $lines; do
-      eval "$line"
-    done 
-  }
-
-  __eval_line $1
+  # eval lines
+  for line in $lines; do
+    __eval $line
+  done 
 }
 
 alias colorscheme="colorscheme_main"
