@@ -1,0 +1,21 @@
+ForegroundColour = 171,178,191
+BackgroundColour = 30,33,39
+CursorColour     = 97,175,239
+
+Black   = 92,99,112
+Red     = 224,108,117
+Green   = 152,195,121
+Yellow  = 209,154,102
+Blue    = 97,175,239
+Magenta = 198,120,221
+Cyan    = 86,182,194
+White   = 168,178,191
+
+BoldBlack   = 92,99,112
+BoldRed     = 224,108,117
+BoldGreen   = 152,195,121
+BoldYellow  = 209,154,102
+BoldBlue    = 97,175,239
+BoldMagenta = 198,120,221
+BoldCyan    = 86,182,194
+BoldWhite   = 168,178,191
