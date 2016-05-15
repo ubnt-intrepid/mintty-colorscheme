@@ -26,9 +26,7 @@ BoldMagenta() { __colorscheme 13 $2 }
 BoldCyan()    { __colorscheme 14 $2 }
 BoldWhite()   { __colorscheme 15 $2 }
 
-function __eval {
-  eval "$@"
-}
+__eval() { eval "$@" }
 
 colorscheme_main() {
 
@@ -40,11 +38,7 @@ colorscheme_main() {
   fi
 
   if [[ "$1" == '--list' ]]; then
-    local name
-    for name in "${script_root}"/schemes/*(.); do
-      echo -n "$(basename $name) "
-    done
-    echo
+    basename -a "${script_root}"/schemes/*(.)
     return 0
   fi
 
