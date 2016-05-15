@@ -1,8 +1,8 @@
 # based on https://github.com/zenorocha/dracula-theme/blob/master/iterm/Dracula.itermcolors
 
-ForegroundColor = 229,229,229
-BackgroundColor = 30,31,40
-CursorColor     = 187,187,187
+ForegroundColour = 229,229,229
+BackgroundColour = 30,31,40
+CursorColour     = 187,187,187
 
 Black       = 0,0,0
 Red         = 255,85,85
