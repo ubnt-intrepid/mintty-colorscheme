@@ -27,7 +27,8 @@ BoldCyan()    { __colorscheme 14 "$*" }
 BoldWhite()   { __colorscheme 15 "$*" }
 
 __eval() {
-  eval "${@%%=*} ${@##*=}"
+  eval "${1%%=*} ${1##*=}"
+  # echo $2
 }
 
 colorscheme_main() {
@@ -50,9 +51,9 @@ EOF
   zparseopts -D -M -A opthash -- \
     h  -help=h \
     l  -list=l \
-    c: -config:=c
+    c: -config:=c \
+    o  -overwrite=o
 
-  
   if [[ -n "${opthash[(i)-h]}" ]]; then
     _usage "$0"
     return 0
@@ -69,6 +70,12 @@ EOF
     echo "config: $config"
   fi
 
+  local overwrite=false
+  if [[ -n "${opthash[(i)-o]}" ]]; then
+    overwrite=true
+    echo "overwrite: true"
+  fi
+
   if (( $# != 1 )); then
     _usage "$0"
     return 1
@@ -82,7 +89,7 @@ EOF
   # eval lines
   local line
   for line in $lines; do
-    __eval $line
+    __eval $line "$overwrite"
   done 
 }
 
