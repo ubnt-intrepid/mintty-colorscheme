@@ -1,6 +1,7 @@
 #!/usr/bin/zsh
 
 script_root="$(realpath $(dirname `realpath $0`))"
+scheme_root=${scheme_root:-"$script_root"/schemes}
 
 __color()       { echo -ne '\eP\e]'$1';'$2'\a' }
 __colorscheme() { echo -ne '\eP\e]4;'$1';'$2'\a' }
@@ -60,7 +61,7 @@ EOF
   fi
   
   if [[ -n "${opthash[(i)-l]}" ]]; then
-    basename -a "$script_root"/schemes/*(.)
+    basename -a "$scheme_root"/*(.)
     return 0
   fi
 
@@ -83,7 +84,7 @@ EOF
 
   # read schemes
   local lines
-  lines=( ${(@f)"$(< $script_root/schemes/$1)"} )
+  lines=( ${(@f)"$(< $scheme_root/$1)"} )
   lines=( ${lines:#\#*} )
 
   # eval lines
